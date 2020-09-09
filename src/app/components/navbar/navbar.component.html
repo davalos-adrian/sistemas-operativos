@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg d-flex flex-column">
+    <div class="nav-header d-flex">
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/images/logo-udg.png" width="73" height="100" alt=""/>
+        </a>
+      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <span class="nav-title">Sistemas operativos</span>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto d-flex justify-content-center ">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" >Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/homeworks/sspso']" routerLinkActive="active" >Tareas SO</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/homeworks/sspsor']" routerLinkActive="active" >Tareas SO de red</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>

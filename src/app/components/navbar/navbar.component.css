@@ -1,0 +1,35 @@
+ul {
+    width: 100%;
+}
+
+ul > li :hover {
+
+}
+
+.navbar-brand {
+    line-height: 40px;
+}
+
+
+nav {
+    box-shadow: -20px -10px 20px -1px rgba(0,0,0,0.75);
+    
+}
+
+ul > li > a:hover {
+    color: #FF9800
+}
+
+ul > li > a.active {
+    color: #FF9800
+}
+
+ul > li > a {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.nav-title{
+    color: white;
+    font-size: 2rem;
+}

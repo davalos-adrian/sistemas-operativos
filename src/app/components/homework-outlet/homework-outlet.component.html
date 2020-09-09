@@ -1,0 +1,14 @@
+<div class="container my-3">
+    <div class="card-columns">
+        <div *ngFor="let homework of homeworks" class="card border border-primary card-fade fade-in" style="width: 18rem;">
+            <div class="card-header">
+                <h5 class="card-title">Tarea #{{homework.relId}} - {{homework.name}} </h5>
+            </div>
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Entrega: {{homework.date | date:'dd/MM/yyyy'}} </h6>
+              <p class="card-text">Descripción: {{ homework.desc }}</p>
+              <button class="card-link btn btn-outline-primary btn-block" (click)="showHomework( homework )">Ver tarea</button>
+            </div>
+        </div>
+    </div>
+</div>
