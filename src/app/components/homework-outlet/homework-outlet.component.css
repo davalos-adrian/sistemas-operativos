@@ -7,3 +7,13 @@
     opacity: 1;
     transition: ease-in-out .25s;
 }
+
+.card {
+    
+}
+
+@media (min-width: 600px) {
+    .card {
+        max-width: 18rem;
+    }
+}
