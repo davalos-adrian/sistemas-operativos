@@ -1,0 +1,118 @@
+
+
+<div>
+
+    <h3>Arranque del sistema</h3>
+    <p class="text-justify">Todos los sistemas operativos necesitan correr por un proceso de arranque para poder comenzar a funcionar. Durante este proceso, el sistema
+        operativo se prepara para ser utilizado por el/los usuario/s. Generalmente, el proceso de arranque del sistema cuenta de 2 fases:
+        <ul>
+            <li>Arranque del hardware</li>
+            <li>Arranque del S.O.</li>
+        </ul>
+    </p>
+    <p class="text-justify">
+        Todo este proceso inicia desde que se carga el programa de arranque disponible en la memoria <b>ROM</b>.
+        El programa inicializador de la ROM se encarga de comprobar el sistema, detectando características y comprobando su funcionamiento, también lee y almacena
+        el programa que carga el S.O. y procede a pasarle el control a este. Este programa se encuentra en los sectores conocidos como <b>MBR</b> y se encarga de cargar el 
+        núcleo del S.O. y pasarle el control.
+    </p>
+    <p class="text-justify">
+        El <b>núcleo</b> continúa con el arranque realizando una <b>comprobación del hardware del sistema</b>. Después de inicializar suis tablas internas
+        y generar las estructuras de datos necesarias, crea el proceso Init y le cede el control. Este proceso termina el proceso de arranque, dejando listo
+        el sistema en modo multiusuario para que sea utilizado. Este proceso verifica los sistemas de archivos, monta los sistemas de archivos permanentes,
+        activa las áreas de memoria de intercambio o <i>swap</i>, activa los <b>demonios</b> (servicios en windows) y finalmente habilita el inicio de sesión
+        a los usuarios del sistema.
+    </p>
+    <hr>
+    <h3>Parada del sistema</h3>
+    <p class="text-justify">
+        Es posible detener un sistema operativo, puesto que en ocasiones será necesario un reinicio o apagar por completo el sistema.
+        Este proceso sigue los siguientes pasos:
+        <ol>
+            <li>Se notifica a los usuarios</li>
+            <li>Se envía una señal de finalización a los procesos</li>
+            <li>Se detienen los servicios o demonios</li>
+            <li>Se "kickea" a los usuarios que estén utilizando el sistema</li>
+            <li>Procesos que quedaron activos se les manda la señal de "kill"</li>
+            <li>Se actualizan o se ejecutan las actualizaciones de disco pendientes</li>
+            <li>Se ejecuta la orden de apagado (apagar, reinicio, etc.)</li>
+        </ol>
+    </p>
+    <hr>
+    <h3>Causas de arranque y parada de sistemas ajenas al usuario</h3>
+    <p class="text-justify">
+        No siempre será el usuario quien mande la señal de finalización del sistema y no siempre se iniciará el sistema
+        cuando el usuario lo finalice, puesto que existen causasn externas al usuario que pueden evitar el inicio del sistema
+        o que pueden causar una finalización imprevista del sistema. Estas se enlistan a continuación (recordar que son algunas, ya que
+        las razones pueden ser muchas).
+    </p>
+    <h4>Causas de finalización del sistema</h4>
+        <ul>
+            <li>Fallos en el hardware</li>
+            <li>Errores en el hardware <b>irrecuperables</b></li>
+            <li>Fallos en la corriente electrica</li>
+            <li>Problemas en la entrada o salida</li>
+            <li>Problemas en algún sistema de archivos</li>
+        </ul>
+        <p class="text-justify">
+            Estos fallos en la paltaforma de windows, generalmente son representados mediante una "pantalla azul",
+            indicando el tipo de error y algún código para acudir al soporte técnico, como se muestra en la siguiente figura.
+        </p>
+        
+        <img class="rounded mx-auto d-block mb-3" src="../../../assets/images/tarea5_blue_screen.png" alt="" width="600px"/>
+        <p class="text-justify">
+            Existe un equivalente en linux llamado <b>panico de kernel</b>, es una pantalla MUY POCO COMÚN, puesto que los sistemas linux son muy buernos manejando
+            hardware. Generalmente estos errores se producirían cuando se cuenta con hardware dañado.
+
+        </p>
+        <img class="rounded mx-auto d-block" src="../../../assets/images/tarea5_kernel_panic.png" alt="" width="600px"/>
+        
+    </h4>
+    <h4>Problemas al iniciar el sistema</h4>
+        <ul>
+            <li>Hardware dañado o con errores</li>
+            <li>Errores al leer el sistema de archivos</li>
+            <li>Sectores dañados o que no perteneces al sistema de archivos</li>
+            <li>Hardware incompatible</li>
+            <li>Errores en la configuración del sistema</li>
+        </ul>
+    </h4>
+    <hr>
+    <h3>Servicios de directorio y dominio</h3>
+    <p class="text-justify">
+        El <b>servicio de directorio</b> es una aplicación o un conjunto de aplicaciones que almacena y organiza la información sobre los usuarios de una red de 
+        ordenadores y sobre los recursos de red que permite a los administradores gestionar el acceso de usuarios a los recursos sobre dicha red. 
+        Además, los servicios de directorio actúan como una capa de abstracción entre los usuarios y los recursos compartidos.
+        <ul>
+            <li>Active directory (Windows)</li>
+            <li>Open directory (Mac OS X)</li>
+            <li>NIS Network information system (UNIX)</li>
+            <li>Servidor de directorio de Red Hat</li>
+            <li>Servidor de directorio de Apache</li>
+            <li>Servidor de Sun Java System</li>
+            <li>Entre otros.</li>
+        </ul>
+    </p>
+
+    <p class="text-justify">
+        Los administradores de redes tienen claro que la forma más eficiente de aprovechar el potencial de los equipos es mediante la creación de
+        <b>dominios</b>. Los dominios almacenan información administrativa de manera centralizada, como son las cuentas de usuario, impresoras,
+        directorios, etc. facilitando así las labores del administrador. Específicamente en windows, cuando se instala un directorio activo en un ordenador,
+        este se convierte en un servidor, o más correctamente, en un <b>controlador de dominio</b>.
+    </p>
+    <h3>Conclusión</h3>
+    <p class="text-justify">
+        Los controladores de dominio y los servicios de directorio son una parte fundamental de los sistemas operativos en red, es la columna de
+        estos, puesto que estos proporcionan el control y la administración de todos los equipos que forman parte del dominio, brindan los servicios
+        necesarios para organizar y almacenar la información de los usarios dentro de la red. Es importante tenerlos en cuenta durante el transcurso
+        de toda la materia, pues serán una parte primordial durante la duración de esta.
+    </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.25-311.</li>
+        <li>ITBlogadmin. (2012). SERVICIO DE DIRECTORIO DE USUARIOS EN RED. octubre 10, 2020, de casandrasoft Sitio web: https://casandrasoft.com/servicio-de-directorio-de-usuarios-en-red/</li>
+        <li>Desconocido. (2008). ¿QUÉ SON LOS CONTROLADORES DE DOMINIO?. octubre 10, 2020, de MSI Networks Sitio web: https://msinetworks.com.do/blog/que-son-los-controladores-de-dominio/</li>
+        <li>Gonzalez, P. (2013). Arranque y parada del sistema. octubre 10, 2020, de Departamento de ingeniería y tecnología de computadores Sitio web: http://infocornella.weebly.com/uploads/7/8/2/5/7825663/arranque_y_parada_del_sistema.pdf</li>
+    </ul>
+</div>
