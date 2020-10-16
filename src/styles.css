@@ -51,4 +51,6 @@ body {
   
 
 
-  
+  img {
+    max-height: 500px !important;
+  }

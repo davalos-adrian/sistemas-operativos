@@ -1,4 +1,4 @@
-<div class="container my-5 fade-in text-white">
+<div id="homework-body" *ngIf="homework" class="container my-5 fade-in text-white rounded shadow p-5">
     <h1> Tarea #{{homework.relId}} - {{ homework.name }} </h1>
     <h4 class="text-justify my-2"> Instrucciones: {{homework.desc}} </h4>
     <br>

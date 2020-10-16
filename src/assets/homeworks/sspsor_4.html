@@ -1,0 +1,134 @@
+<div>
+    <h3>Controlador de dominio</h3>
+    <p class="text-justify">
+        Un controlador de dominio es, en pocas palabras, un sistema operativo <b>Windows</b> al que se le ha instalado un servicio de directorio, convirtiendolo en un 
+        servidor dentro de un dominio, por esta razon se le atribuye el nombre <b>controlador de dominio</b>. En estos equipos o equipo, si se trata de un servidor individual,
+        se almacena, mantiene y gestiona la base de datos de usuariosy de recursos en la red.
+    </p>
+    <p class="text-justify">
+        Cabe destacar que el término <i>controlador de dominio</i> es específico de Windows, y su equivalente en una red Unix es un <b>Network Information Service</b>.
+        En un dominio Windows, cuando un cliente no autorizado solicita un acceso a los recursos compartidos de un servidor, el servidor actúa y pregunta al controlador de dominio 
+        si ese usuario está autentificado. Si lo está, el servidor establecerá una conexión de sesión con los derechos de acceso correspondientes para ese servicio y usuario. 
+        Si no lo está, la conexión es denegada.
+    </p>
+    <hr>
+    <h3>Instalación de un controlador de dominio</h3>
+    <p class="text-justify">
+        Para la instalación del controlador del dominio decidí virtualizar el sistema operativo Windows Server 2008 R2.
+        Así que ésto será una guía detallada de cómo instalar y cómo eliminar un controlador de dominio y un servicio de directorio active directory.
+        <ol>
+            <li>
+                Primero hay que instalar Active directory configurando el servidor.
+                <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/windows_server_1.PNG" alt="">
+            </li>
+            <li>
+                Despues, es necesario personalizar el servidor, dar clic en elegir roles y seleccionar
+                "Servicios de dominio de active directory"
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_2.png" alt="">
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_3.png" alt="">
+                Y esperar a que finalice la instalación.
+                Una vez hecho esto, ya tenemos habilitado el servicio de directorio <i>active directory</i> de windows
+            </li>
+            <li>
+                Ahora procedemos a instalar el controlador de dominio, para esto hay que ejecutar la herramienta <b>dcpromo.exe</b>
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_4.png" alt="">
+                Damos siguiente y nos aparecerá una advertencia sobre la compatibilidad, hay que dar siguiente de nuevo y escoger la
+                opción de crear un dominio nuevo en un bosque nuevo y dar siguiente.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_5.png" alt="">
+                A continuación, preguntará por el FQDN, que corresponde al nombre del dominio del bosque, este hay que 
+                elegir cuál será nuestro dominio, en mi caso utilicé sistemasoperativosdavalos.com.
+            </li>
+            <li>
+                Como se trata del dominio raiz del bosque, se preguntará por el nivel funcional del equipo, aquí hay que tener en cuenta
+                qué versión de windows ejecutarán los otros equipos que tengan windows server en nuestro dominio. Como en esta ocasión
+                solo se ejecutará un equipo se puede seleccionar cualquiera.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_6.png" alt="">
+            </li>
+            <li>
+                El siguiente paso preguntará si se desea utilizar DNS, hay que seleccionar que sí, puesto que de otra manera no se tendría
+                servicio de resolución de nombres y no se podría asociar nombres a direcciones IP de los equipos
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_7.png" alt="">
+            </li>
+            <li>
+                Después habrá que elegir los archivos de base de datos con los que trabajará <i>active directory</i>
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_8.png" alt="">
+            </li>
+            <li>
+                Lo último será elegir una contraseña para restablecer los servicios de directorio, como recomendación
+                hay que escoger la misma contraseña que la del administrador del equipo.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_9.png" alt="">
+            </li>
+            <li>
+                Al finalizar el proceso pedirá reiniciar la computadora. Listo, ya se tiene instalador active directory y un controlador de dominio.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_10.png" alt="">
+            </li>
+        </ol>
+    </p>
+    <hr>
+    <h3>Eliminación de un controlador de dominio</h3>
+    <p class="text-justify">
+        Ahora que ya se tiene un controlador de dominio, podemos proceder a eliminarlo.
+        <ol>
+            <li>
+                Primero, hay que desinstalar active directory del controlador de dominio.
+                Hay que volver a utilizar la herramienta <b>dcpromo.exe</b>
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_4.png" alt="">
+            </li>
+            <li>Ahora aparecerá una pantalla como la siguiente, puesto que la operación que se está a punto de cometer es peligrosa
+                en un ambiente productivo, pero como solo se trata de una instancia de prueba y solo es un controlador de dominio,
+                se puede proceder.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_11.png" alt="">
+            </li>
+            <li>Hay que seleccionar aceptar y eliminar el dominio
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_12.png" alt="">
+            </li>
+            <li>Después preguntará si se desean eliminar todas las particiones que fueron creadas por el controlador
+                de dominio, hay que seleccionar y aceptar.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_13.png" alt="">
+            </li>
+            <li>Al final, como se elimina el usuario administrador del controlador del dominio, hay que seleccionar una nueva
+                contraseña para el administrador
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_14.png" alt="">
+            </li>
+            <li>Solo hay que esperar a que termine el proceso y reiniciar el ordenador y el controlador de dominio estará eliminado
+                la siguiente vez que se inicie el ordenador.
+                <img class="rounded mx-auto d-block img-fluid my-1" src="../../../assets/images/windows_server_15.png" alt="">
+            </li>
+        </ol>
+    </p>
+    <hr>
+    <h3>Objetos que administra un dominio</h3>
+    <ul>
+        <li>
+            <b>Usuarios globales</b>: Una vez instalado el controlador de dominio, las cuentas y los grupos locales desaparecen, convirtiendose en
+            grupos y usuarios globales, puesto que ahora tienen que autenticarse al controlador del dominio. Esto ayuda en la administración de usuarios
+            puesto que ya solo existe un usuario global para tu computador y no un usuario local para el grupo.
+        </li>
+        <li>
+            <b>Grupos</b>: Dentro del controlador de dominio pueden crearse grupos globales, es decir, grupos que pueden ser vistos por todos
+            los ordenadores del dominio. Se pueden crear 2 tipos de grupos dentro del dominio: grupos de distribución y grupos de seguridad.
+        </li>
+        <li>
+            <b>Equipos</b>: Se almacena el nombre de los ordenadores, así como un identificador único por ordenador. Gracias a esto se pueden tener permisos
+            unicos y derechos de acceso.
+        </li>
+        <li>
+            <b>Unidades organizativas</b>: Son objetos dentro del directorio que sirve para organizar la administración de los objetos, es como agrupar objetos para
+            delegar su dministración a otros usuarios dentro del dominio.
+        </li>
+    </ul>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/objetos.png" alt="">
+    <hr>
+    <h3>Conclusión</h3>
+    <p class="text-justify">
+        Los controladores de dominio y los servicios de directorio son una parte fundamental de los sistemas operativos en red, es la columna de
+        estos, puesto que estos proporcionan el control y la administración de todos los equipos que forman parte del dominio, brindan los servicios
+        necesarios para organizar y almacenar la información de los usarios dentro de la red. Es importante tenerlos en cuenta durante el transcurso
+        de toda la materia, pues serán una parte primordial durante la duración de esta.
+    </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.30-41.</li>
+    </ul>
+</div>

@@ -1,6 +1,43 @@
 [
-    {"id": 1, "relId": 2, "subject": "sspsor", "file": "sspsor_1.html", "date": "2020/09/18", "reviewed": true, "name": "Introducción a los sistemas operativos de red", "desc": "Analizar las  características  generales  de  los  Sistemas Operativos de Red, e identificar los existentes sistemas operativos en la actualidad y documentar en una tabla comparativa."},
-    {"id": 2, "relId": 3, "subject": "sspsor", "file": "sspsor_2.html", "date": "2020/09/26", "reviewed": true, "name": "Sistemas operativos de red", "desc": "Investigue el funcionamiento de un SOR, destacando las características y su comportamiento y plasmarlo en un mapa semántico e investigar sobre Planificación de la instalación. particiones y sistemas de archivos"},
-    {"id": 3, "relId": 5, "subject": "sspsor", "file": "sspsor_3.html", "date": "2020/10/10", "reviewed": false, "name": "Dominio en redes", "desc": "Investigar sobre el arranque y parada del sistema y la definición de servicio de directorio y dominio, crear un video o presentación o página WEB sobre la actividad."}
+    {
+        "id": 1,
+        "relId": 2, 
+        "subject": "sspsor", 
+        "file": "sspsor_1.html", 
+        "date": "2020/09/18", 
+        "reviewed": true, 
+        "name": "Introducción a los sistemas operativos de red", 
+        "desc": "Analizar las  características  generales  de  los  Sistemas Operativos de Red, e identificar los existentes sistemas operativos en la actualidad y documentar en una tabla comparativa."},
+    {
+        "id": 2, 
+        "relId": 3,
+        "subject": "sspsor",
+        "file": "sspsor_2.html",
+        "date": "2020/09/26",
+        "reviewed": true,
+        "name": "Sistemas operativos de red",
+        "desc": "Investigue el funcionamiento de un SOR, destacando las características y su comportamiento y plasmarlo en un mapa semántico e investigar sobre Planificación de la instalación. particiones y sistemas de archivos"
+    },
+
+    {
+        "id": 3,
+        "relId": 5,
+        "subject": "sspsor",
+        "file": "sspsor_3.html",
+        "date": "2020/10/10",
+        "reviewed": true,
+        "name": "Dominio en redes",
+        "desc": "Investigar sobre el arranque y parada del sistema y la definición de servicio de directorio y dominio, crear un video o presentación o página WEB sobre la actividad."
+    },
+    {
+        "id": 4,
+        "relId": 6,
+        "subject": "sspsor",
+        "file": "sspsor_4.html",
+        "date": "2020/10/16",
+        "reviewed": false,
+        "name": "Controlador de dominio",
+        "desc": "Investigar qué es y como se elimina un controlador de dominio y qué objetos administra un dominio."
+    }
 
 ]
