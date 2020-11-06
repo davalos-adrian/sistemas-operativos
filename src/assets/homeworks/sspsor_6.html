@@ -1,0 +1,138 @@
+<div>
+    <h3>Grupos de usuarios en Active Directory</h3>
+    <p class="text-justify">
+        Los grupos en  windows server son objetos de los servicios de dominio de active directory. Los grupos contienen usuarios
+        contactos, equipos e incluso, otros grupos.
+        Se pueden destacar 2 tipos de grupos: <b>grupos de seguridad</b> y <b>grupos de distribución</b>
+    </p>
+    <p class="text-justify">
+        Los grupos pueden ayudar a simplificar la administración al proporcionar un método sencillo para conceder
+        permisos o capacidades comunes a multiples usuarios simultáneamente, ya que solo es necesario aplicar el permiso al grupo
+        y todos los usuarios miembros de ese grupo contarán con dicha capacidad.
+        Cuando un grupo es creado, se le asigna un ámbito, y este ámbito es el que determina la visibilidad de ese grupo
+        dentro del dominio, los ámbitos se describen de acuerdo a la tabla siguiente:
+    </p>
+    <table class="table text-white table-bordered table-light table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Ámbito del grupo</th>
+                <th>Puede tener como miembros a</th>
+                <th>Pueden ser miembros de</th>
+                <th>Se pueden gestionar</th>
+            </tr>
+        </thead>
+        <tbody class="text-dark">
+            <tr>
+                <td>Global</td>
+                <td>
+                    <ul>
+                        <li>
+                            Otros grupos globales del mismo dominio
+                        </li>
+                        <li>
+                            Cuentas de usuario del mismo dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Grupos universales o locales de dominio en cualquier dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    Solo en el dominio donde está dado de alta el grupo, pero sus permisos tienen validez en cualquier dominio
+                </td>
+            </tr>
+            <tr>
+                <td>Local</td>
+                <td>
+                    <ul>
+                        <li>
+                            Otros grupos locales del mismo dominio
+                        </li>
+                        <li>
+                            Grupos globales de cualquier dominio
+                        </li>
+                        <li>
+                            Grupos universales de cualquier dominio
+                        </li>
+                        <li>
+                            Usuarios de cualquier dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Otros grupos locales de dominio en el mismo  dominio
+                        </li>
+                        <li>
+                            Grupos globales de cualquier dominio
+                        </li>
+                        <li>
+                            Grupos universales de cualquier dominio
+                        </li>
+                        <li>
+                            Cuentas individuales de cualquier dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    En cualquier dominio, pero sus permisos solo son efectivos para los recursos del dominio en el que se crea el grupo
+                </td>
+            </tr>
+            <tr>
+                <td>Universal</td>
+                <td>
+                    <ul>
+                        <li>
+                            Otros grupos universales
+                        </li>
+                        <li>
+                            Grupos globales de cualquier dominio
+                        </li>
+                        <li>
+                            Cuentas de usuarios de cualquier dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Otros grupos globales en el mismo dominio
+                        </li>
+                        <li>
+                            Cuentas individiales del mismo dominio
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    En servidores en modo nativo
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/usuarios_1.png" alt="">
+    <p class="text-center text-light">Ejemplo de una jerarquía en un dominio</p>
+    <hr>
+    <h3>La herramienta <i>Usuarios y equipos de Active Directory</i></h3>
+    <p class="text-justify">
+        Algunos de los grupos de usuarios ya vienen creados por defecto. Los que se quieran dar de alta se realizará con la
+        herramienta usuarios y equipos de active directory una vez que el equipo sea controlador de dominio.
+    </p>    
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/usuarios_2.png" alt="">
+    <p>
+        En esta herramienta se representa el dominio sobre el que se está trabajando. Además, se representan los contenedores de grupos de objetos con los que se pueden
+        trabajar. En particular se cuenta con equipos, grupos y usuarios, entre otros.
+
+    </p>
+    <hr>
+    <h3>Conclusión</h3>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.42-43.</li>
+    </ul>
+</div>

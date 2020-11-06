@@ -48,6 +48,16 @@
         "reviewed": false,
         "name": "Utilización de herramientas para la administración de dominio",
         "desc": "Investigar sobre herramientas para la administración de dominio."
+    },
+    {
+        "id": 6,
+        "relId": 8,
+        "subject": "sspsor",
+        "file": "sspsor_6.html",
+        "date": "2020/11/1",
+        "reviewed": false,
+        "name": "Usuarios y grupos en red",
+        "desc": "Investigar sobre usuarios y grupos, así como la gestión de permisos y accesos, destacando las características y su comportamiento."
     }
 
 ]
