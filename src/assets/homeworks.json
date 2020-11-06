@@ -35,9 +35,19 @@
         "subject": "sspsor",
         "file": "sspsor_4.html",
         "date": "2020/10/16",
-        "reviewed": false,
+        "reviewed": true,
         "name": "Controlador de dominio",
         "desc": "Investigar qué es y como se elimina un controlador de dominio y qué objetos administra un dominio."
+    },
+    {
+        "id": 5,
+        "relId": 7,
+        "subject": "sspsor",
+        "file": "sspsor_5.html",
+        "date": "2020/10/24",
+        "reviewed": false,
+        "name": "Utilización de herramientas para la administración de dominio",
+        "desc": "Investigar sobre herramientas para la administración de dominio."
     }
 
 ]
