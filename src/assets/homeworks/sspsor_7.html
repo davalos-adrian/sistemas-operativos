@@ -1,0 +1,81 @@
+<div>
+    <h3>Gestión de grupos de usuario y creación de usuarios</h3>
+    <p class="text-justify">
+        Para crear un grupo se debe tener clara la infraestructura de la empresa, los usuarios, grupos y usuarios que pertenecerán a cada grupo.
+        Es necesario tener en cuenta que el nombre del grupo debe ser único dentro de todo el dominio
+    </p>
+    <h3>Pasos para crear un grupo</h3>
+    <p class="text-justify">
+        Primero hay que desplegar la unidad organizativa que contiene grupos
+        para poder acceder a la creación de estas mismas.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_1.png" alt="">
+    <p class="text-justify">
+        Después hay que hacer click derecho, seleccionar Nuevo y Grupo, se desplegará un cuadro de dialogo
+        para configurar el nuevo grupo.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_2.png" alt="">
+    <p class="text-justify">
+        En el cuadro de dialogo habrá que  configurar el nombre del grupo para versiones nuevas de windows server
+        y para grupos anteriores a windows 2000. También habrá que configurar el ambito y el tipo del grupo
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_3.png" alt="">
+    <p class="text-justify">
+        En este ejemplo se creó un grupo llamado RH de tipo grupo de seguridad, existen
+        2 tipos de grupos como se explicó
+        <ol>
+            <li>
+                <b>Grupos de seguridad</b>: Son creados para dar o eliminar permisos sobre los recursos del dominio
+            </li>
+            <li>
+                <b>Grupos de distribución</b>: Son creados para realizar instalaciones remotas de software en equipos clientes en los qeu validan
+                usuarios que pertenezcan al grupo
+            </li>
+        </ol>
+    </p>
+    <hr>
+    <h3>Agregar usuarios un grupo del dominio</h3>
+    <p class="text-justify">
+        Para este ejemplo se va a crear una unidad organizativa llamada
+        departamentos, dentro de esta unidad se creará un grupo local llamado
+        contabilidad, otro grupo global llamado almacen y otro grupo universal
+        llamado mantenimiento.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_4.png" alt="">
+    <p class="text-justify">
+        Hay que seleccionar los usuarios que se quieran agregar al grupo, dar click derecho
+        y seleccionar agregar al grupo.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_5.png" alt="">
+    <p class="text-justify">
+        Se escriben los nombres de grupos que se quieran añadir y dar click en
+        comprobar nobmres.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_6.png" alt="">
+    <p class="text-justify">
+        También es posible agregar usuarios a los grupos desde las propiedades del grupo
+        seleccionando la pestaña de miembros y dando click en agregar.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_7.png" alt="">
+    <hr>
+    <h3>Creación de usuarios en el dominio</h3>
+    <p class="text-justify">
+        Para crear un usuario se tiene la unidad organizativa Users o usuarios,
+        dentro de esta si se da click derecho en nuevo y luego en usuario, 
+        aparecerá una ventana para configurar los datos del usuario.
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/creacion_8.png" alt="">
+    <hr>
+    <h3>Conclusión</h3>
+        <p class="text-justify">
+            Una vez más observamos el control que se tiene sobre los usuarios del dominio,
+            de aquí se lleva el nombre de controlador de dominio, tiene control sobre todas las unidades
+            y objetos del dominio, incluyendo grupos, usuarios, unidades organizativas, sobre todo.
+            
+        </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.43-50.</li>
+    </ul>
+</div>

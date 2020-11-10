@@ -58,6 +58,16 @@
         "reviewed": false,
         "name": "Usuarios y grupos en red",
         "desc": "Investigar sobre usuarios y grupos, así como la gestión de permisos y accesos, destacando las características y su comportamiento."
+    },
+    {
+        "id": 7,
+        "relId": 9,
+        "subject": "sspsor",
+        "file": "sspsor_7.html",
+        "date": "2020/11/8",
+        "reviewed": false,
+        "name": "Usuarios y administración de usuarios",
+        "desc": "Retomar la actividad de la unidad anterior y creará y gestionará usuarios y grupos otorgando accesos y los evidenciara."
     }
 
 ]
