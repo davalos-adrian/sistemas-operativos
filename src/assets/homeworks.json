@@ -55,7 +55,7 @@
         "subject": "sspsor",
         "file": "sspsor_6.html",
         "date": "2020/11/1",
-        "reviewed": false,
+        "reviewed": true,
         "name": "Usuarios y grupos en red",
         "desc": "Investigar sobre usuarios y grupos, así como la gestión de permisos y accesos, destacando las características y su comportamiento."
     },
@@ -65,9 +65,19 @@
         "subject": "sspsor",
         "file": "sspsor_7.html",
         "date": "2020/11/8",
-        "reviewed": false,
+        "reviewed": true,
         "name": "Usuarios y administración de usuarios",
         "desc": "Retomar la actividad de la unidad anterior y creará y gestionará usuarios y grupos otorgando accesos y los evidenciara."
+    },
+    {
+        "id": 8,
+        "relId": 10,
+        "subject": "sspsor",
+        "file": "sspsor_8.html",
+        "date": "2020/11/15",
+        "reviewed": false,
+        "name": "Administración de redes y sus utilidades",
+        "desc": "Investigar sobre las sesiones, así como la gestión de permisos y accesos, destacando las características. Plasmará su comportamiento y los aplicará."
     }
 
 ]

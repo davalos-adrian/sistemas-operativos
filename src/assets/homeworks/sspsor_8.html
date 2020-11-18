@@ -1,0 +1,125 @@
+<div>
+    <h3>Integración de clientes en un dominio</h3>
+    <p class="text-justify">
+        Es muy importante que cuando se quiera agregar un cliente al dominio se verifique una serie de requisitos:
+        <ol type="a">
+            <li>El quipo tiene un nombre único en la red</li>
+            <li>El equipo tiene una direción IP dentro del mismo rango de direcciones IP que el servidor</li>
+            <li>La máscara de red tiene que ser la misma que la del servidor u otra que permita verla en la red</li>
+            <li>El grupo de trabajo al que pertenece el equipo no es importante hasta este punto</li>
+            <li>Introducir la direccion IP del servidor como DNS princial del equipo</li>
+            <li>Comprobar y verificar que el cliente tiene conectividad con otros equipos utilizando cmd. Habrá que hacer un ping a la IP del servidor</li>
+            <li>Asegurarnos de que el usuario Administrador del cliente tiene contraseña</li>
+            <li>Haber iniciado sesión en el equipo localmente con la cuenta local del administrador</li>
+        </ol>
+    </p>
+    <p class="text-justify">
+        Una vez que se cumplan todos los requisitos, ya se tiene un equipo listo para
+        ser integrado en el dominio. Para realizar esta operación hay que serguir lo siguientes pasos:
+        <ol type="1">
+            <li>Desde el equipo, se tiene que ir a propiedades del equipos o sistema, en la pestaña de <i>Nombre del equipo</i></li>
+            <li>Pulsar el botón Cambiar. Se verá una pantalla como la siguiente imagen. Ahí se introducirá el nombre del dominio
+                al que se quiere unir
+            </li>
+        </ol>
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_1.png" alt="">
+    </p>
+    <p class="text-justify">
+        Aparecerá una pantalla para iniciar sesión con un usuario que se haya dado de alto en el dominio.
+        Hechos estos pasos, la siguiente vez que el cliente quiera iniciar sesión, aparecerá el nombre del dominio
+        seguido del nombre del usuario como en la siguiente imagen. Esto quiere decir que el usuario y ese equipo ya se
+        encuentran en el dominio
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_2.png" alt="">
+    </p>
+    <hr>
+    <h3>Conceptos de permisos y derechos, recursos compartidos</h3>
+    <p class="text-justify">
+        En un dominio se pueden compartir recursos asignandose permisos de acceso solamente a usuarios globales del dominio, pero desde los clientes
+        se pueden compartir recursos para el resto de usuarios de la red y también asignar permiso de acceso a usuarios locales
+        Para compartir una carpeta es necesario seguir los siguientes pasos.
+        Dentro de herramiuentas administrativas > administración de equipos > recursos compartidos, se pueden ver los recursos que el propio servidor ha comaprtido automaticamente
+        al crearse el controlador de dominio
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_3.png" alt="">
+    </p>
+    <p class="text-justify">
+        Ahora sí, para propósitos de este ejemplo, se van a crear 3 carpetas <b>bases de datos, plantillas word y copias de seguridad</b>
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_4.png" alt="">
+        Para compartir una carpeta primero se tiene que activar el uso compartido de carpetas, hay que ir a  centro de redes y recursos compartidos,
+        después hacer click en cambiar configuración de uso compartido avanzado, en los botones que se muestran, seleccionar Activar uso compartido de archivos
+        y Activar la detección de redes, pulsar guardar.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_5.png" alt="">
+        Después, es tan sencilo como hacer click derecho en el recurso que queremos compartir, y seleccionar compartir se mostrará un asistente 
+        donde preguntará por cuales usuarios y grupos deben de poder acceder a ese recurso.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_6.png" alt="">
+    </p>
+    <hr>
+    <h3>Tipos de permiso de acceso a recursos</h3>
+    <p class="text-justify">Existen varios tipos de permisos para poder acceder a los recursos, los cuales se enlistan en la tabla siguiente:</p>
+    <table class="table text-white table-bordered table-light table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th>Tipo de permiso</th>
+                <th>Tipo de acceso permitido</th>
+                <th>Version de windows server</th>
+            </tr>
+        </thead>
+        <tbody class="text-dark">
+            <tr>
+                <td>Cambio</td>
+                <td>Los usuarios pueden cambiar el contenido de archivos, pero no pueden crear archivos o carpetas</td>
+                <td>2003</td>
+            </tr>
+            <tr>
+                <td>Permitir/denegar</td>
+                <td>Permite o no los permisos anteriores al usuario o grupo seleccionado</td>
+                <td>2003/2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Lectura</td>
+                <td>Los usuarios pueden ver el contenido de una carpeta y abrir archivos y carpetas</td>
+                <td>2003/2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Control total</td>
+                <td>Los usuarios pueden ver el contenido de un archivo o carpeta, cambiar los archivos y carpetas existenter, crear nuevos archvios y ejecutar archivos en una carpeta</td>
+                <td>2003/2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Escritura</td>
+                <td>Los usuarios pueden crear nuevos archivos y carpetas, así como realizar cambios en las carpetas y archivos existentes</td>
+                <td>2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Lectura y ejecución</td>
+                <td>Los usuarios pueden ver el contenido de los archivos y carpetas existentes y ejecutar programas</td>
+                <td>2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Modificar</td>
+                <td>Los usuarios pueden cambiar el contenido de archivos y carpetas existentes, pero no pueden crear nuevos archivos</td>
+                <td>2008/2008R2</td>
+            </tr>
+            <tr>
+                <td>Permisos especiales</td>
+                <td>Los permisos especiales NTFS proporcionan control de acceso a los recursos más fino. La lista de permisos especiales es realmente larga y la podemos consultar en el CEO</td>
+                <td>2008R2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h3>Conclusión</h3>
+        <p class="text-justify">
+            Uno de los aspectos más importantes cuando se tienen muchos usuarios y recursos es el tipo de acceso que se le otorga acada usuario sobre cierto recursos,
+            ya que si todos los usuarios tuvieran control total no tendría sentido que existiera un controlador de dominio en esta parte, puesto que, a la hora en que se compartiera un archivo
+            todos los usuarios tendrían acceso total a este recurso y se perdería el control sobre el mismo, cualquier usuario que no tenga conciencia de lo que está haciendo en un
+            recursos podría modificarlo o incluso peor, borrarlo.
+            Es por esto que la otorgación de permisos sobre un recurso es una parte vital en cualquier sistema operativo, ya sea en red o no, siempre que se cuente con
+            acceso a multiples usuarios.
+        </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.70-80.</li>
+    </ul>
+</div>
