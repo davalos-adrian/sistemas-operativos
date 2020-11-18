@@ -1,0 +1,81 @@
+<div>
+    <h3>Inicialización del SO en red</h3>
+    <p class="text-justify">
+        Durante la Inicialización sel sistema operativo, todos los usuarios dados de alta en el controlador de dominio como usuarios globales pueden
+        iniciar sesión localmente en el equipo. 
+        Durante esta etapa, los servicios y proceso que normalmente lanza el controlador de ominio se lanzan igual, pero dependiendo de los privilegios asignados al usuario
+        este podra o no hacer determinadas operaciones.
+        Los pasos para arrancar el sistema son los siguientes:
+        <ol>
+            <li>Se inicia el procesador y se prepara para ejecutar instrucciones, las condiciones iniciales son fijas</li>
+            <li>Se ejecutan las primeras instrucciones.</li>
+            <li>Se inicia lo principal (comprobación de memoria, pantalla, teclado, reloj…).</li>
+            <li>Se inician los dispositivos adicionales con ROM propia. Se miran ciertas posiciones de memoria, y si no están vacías, la ROM principal salta ahí para iniciar el dispositivo (disco duro, disquete…).</li>
+            <li>Se determina de dónde se cargará el SO. Para esto, la BIOS carga un pequeño programa que es el que inicia el SO.</li>
+            <li>Se carga la parte principal del sistema operativo.</li>
+            <li>Se inicia el sistema operativo.</li>
+            <li>Se lanza la interfaz gráfica.</li>
+            <li>Se inicia sesión en el sistema operativo.</li>
+        </ol>
+    </p>
+    <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/clientes_2.png" alt="">
+    <hr>
+    <h3>Herramientas contra fallos</h3>
+    <p class="text-justify">
+        Una de las herramientas más importantes contra fallos son las copias de seguridad o copias de restauración, puesto que estas funcionan incluso para
+        errores causados por humanos, generalmente cuando son errores de software.
+        La herramienta de copias de seguridad de windows server es una característica que no viene instalada de forma predeterminada.
+    </p>
+    <p class="text-justify">
+        Para instalar el servicio, hay que acceder a herramientas administrativas > administrador de servidor, ir a la parte de la derecha y hacer clic en almacenamiento.
+        Se mostrará la opción de copias de seguridad de windows server, tal y como se ve en la siguiente figura.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_1.png" alt="">
+        Como se muestra en la imagen, no tenemos instalada esta característica, es necesario instalarla dentro de las características de windows.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_2.png" alt="">
+    </p>
+    <p class="text-justify">
+        Es conveniente tener un disco duro hecho solamente para guardar la copia de seguridad, a fin de cuentas, ese dinero invertido en otro disco duro
+        podrá salvarnos de muchos fallos o alguna intervención maligna que ocurra en el servidor.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_3.png" alt="">
+        Una vez configurados todos los pasos, habrá que confirmar dónde queremos guardar la copia, en este caso, en el disco duro asignado para copias de seguridad, y posteriormente, hacer click en crear copia,
+        en este caso, como no hemos hecho gran cantidad de cambios, la copia de seguridad solamente pesa 13gb, pero está claro que mientras más crezca un servidor donde se tienen archivos, documentos,
+        videos, fotos, multimedia, etc. los servidores pueden tener tamaños inmensos, incluso a veces se necesitarán discos duros completos para partes del servidor.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_4.png" alt="">
+    </p>
+    <hr>
+    <h3>Simulación de situación de fallo</h3>
+    <p class="text-justify">
+        Imaginemos que hubo un descuido con uno de los empleados de alto rango (cuenta con permisos de escritura sobre casi todos los recursos). Este empleado dejó su computadora abierta en su casa mientras hacía home office 
+        (utilizaba una VPN para conectarse al dominio). Uno de sus hijos pequeños está haciendo sus prácticas de computación en la primaria y comienza a borrar
+        archivos para hacer pruebas, lamentablemente no sabía y eran archivos importantes en la empresa donde trabaja el empleado. Afortunadamente, se crean copías de seguridad
+        diarías en un disco alojado en el servidor de la empresa, por lo que el adminstrador del servidor comienza con la recuperación mediante
+        esta copia y las consecuencias no son tan lamentables.
+        El administrador se dirige a las opciones para adminsitrar el servidor y se encuentra la copia activa, por lo que decide restaurarla.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_5.png" alt="">
+        Estos son los pasos que sigue: da click en la opción de restaurar, lo que abre la siguiente ventana
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_6.png" alt="">
+        Elige la copia más reciente, puesto que es la que se necesita. Da click en continuar
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_7.png" alt="">
+        Como el niño no eliminó mas que unos cientos de archivos, solamente se eligió la opción de recuperar archivos.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_8.png" alt="">
+        El administrador elige todos lso archivos que necesite recuprerar y procede con el asistente
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_9.png" alt="">
+        Al final muestra todo lo que se va a recuperar y procede con la recuperación.
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_10.png" alt="">
+        Afortunadamente se pudieron recuperar los archivos y no hubo peores consecuencias que un regaño al niño
+        <img class="rounded mx-auto d-block img-fluid" src="../../../assets/images/fallos_11.png" alt="">
+    </p>
+    <hr>
+    <h3>Conclusión</h3>
+        <p class="text-justify">
+            Tanto en servidores grandes como en servidores pequeños, siempre es necesario contar con copias de seguridad que respalden la información de una empresa,
+            puesto que esta información generalmente es la que le da valor a esa empresa. Muchas persona recomiendan crear copias de seguridad diarias, o incluso hasta 3 diarias,
+            pero esto depende de la información que maneje la empresa y la disponibilidad de esa información, no siempre se cuenta con los recursos necesarios para tener
+            tantas copias de seguridad, pero es una opción que vale la pena como empresa.
+        </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.100-105.</li>
+    </ul>
+</div>
