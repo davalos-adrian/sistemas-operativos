@@ -75,7 +75,7 @@
         "subject": "sspsor",
         "file": "sspsor_8.html",
         "date": "2020/11/15",
-        "reviewed": false,
+        "reviewed": true,
         "name": "Administración de redes y sus utilidades",
         "desc": "Investigar sobre las sesiones, así como la gestión de permisos y accesos, destacando las características. Plasmará su comportamiento y los aplicará."
     }
@@ -86,9 +86,19 @@
         "subject": "sspsor",
         "file": "sspsor_9.html",
         "date": "2020/11/15",
-        "reviewed": false,
+        "reviewed": true,
         "name": "Inicialización del sistema operativo de red y fallos de arranque",
         "desc": "Investigar sobre la inicialización, descripción de fallos y utilización de herramientas sobre el control de los mismo, los evidenciara en la práctica simulando una situación de fallos y las herramientas utilizadas para su reparación si la hubiera"
+    },
+    {
+        "id": 10,
+        "relId": 12,
+        "subject": "sspsor",
+        "file": "sspsor_10.html",
+        "date": "2020/11/22",
+        "reviewed": false,
+        "name": "Introducción a los sistemas operativos en red con Linux server",
+        "desc": "Analizar las  características  generales  de  los  Sistemas Operativos de Red, identificar similitudes, ventajas y desventajas de los sistemas operativos de red (Windows/Linux), documentarlos.  Plasmar la planificación de la instalación de una distribución de Linux server, documentarlo"
     }
 
 ]

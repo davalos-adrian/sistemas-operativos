@@ -1,0 +1,121 @@
+<div>
+    <h3>Introducción y características de los sistemas operativos en red</h3>
+    <p class="text-justify">
+        Linux Ubuntu viene normalmente disponible en 2 distribuciones, desktop y server.
+        Para esta ocasión utilizaremos ubuntu server.
+        Ubuntu server nos permitirá utiliza un equipo como <b>servidor</b>, este gestionará
+        inicios de sesión de equipos clientes. Los recursos a los que los clientes tienen acceso
+        se gestionan de forma centralizada desde este equipo servidor. Servidores y clientes quedan coordinados para que
+        todos los elemetnos de la red funcionen correctamente.
+    </p>
+    <p class="text-justify">
+        Es cierto que la versión de escritorio de ubuntu puede utilizarse indistintamente como servidor, pero todos los servicios necesarios
+        para fungir como uno, tendrán que ser descargados manualmente. Y es así como la distribución de 
+        ubuntu server viene destinada exclusivamente para esta funcionalidad, ser un servidor de red, por lo que
+        durante la instalación, permitirá configurar los servicios necesarios para que el equipo se convierta en uno.
+    </p>
+    <hr>
+    <h3>Requerimientos de Ubuntu Server</h3>
+    <table class="table text-white table-bordered table-light table-hover table-responsive-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>Versión de linux</th>
+                <th>Procesador</th>
+                <th>Memoria RAM</th>
+                <th>Almacenamiento</th>
+            </tr>
+        </thead>
+        <tbody class="text-dark">
+            <tr>
+                <td>Ubuntu 12.10 Server</td>
+                <td>x86 (1Ghz)</td>
+                <td>1GB en arquitecturas de 64 bits</td>
+                <td>12 GB</td>
+            </tr>
+            <tr>
+                <td>Ubuntu 18.04 Server</td>
+                <td>x86 (1Ghz)</td>
+                <td>1GB en arquitecturas de 64 bits</td>
+                <td>25 GB</td>
+            </tr>
+            <tr>
+                <td>Ubuntu 20.04 Server</td>
+                <td>x86 (1Ghz)</td>
+                <td>1GB en arquitecturas de 64 bits</td>
+                <td>35 GB</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Windows server vs Linux server</h3>
+    <h5> Ventajas de windows server</h5>
+    <p class="text-justify">
+        Todas las aplicaciones de windows como office, outlook, sql server al ser propietarias de Microsoft,
+        se integrarán a tus servidores windows al instante. Si piensa utilizar servicios de windows y software, resulta lógico
+        instalar un servidor nativo como windows server.
+        Windows server se considera como una solución completa que es muy fácil de instalar y configurar. Si el equipo
+        de trabajo trabaja bajo frameworks como ASP y ASP.Net, estos servicios solo funcionarán en windows server.
+    </p>
+    <h5>Ventajas de linux server</h5>
+    <p class="text-justify">
+        Una de las mayores ventajas de linux es que es de código abierto, por lo tanto está abierto
+        a modificaciones para mejorar o arreglas características del sistema operativo.
+        Otra de las mayores ventajas es que es totalmente gratuito.
+        Linux tiene compatibilidad con otros softwares de código abierto y provee una rápida interfaz.
+        Generalmente, los servidores de linux utilizan muchos menos recursos, ya que están diseñados para correr
+        solamente las funciones necesarias.
+        Linux es más seguro que windows.
+        La mayoría de los malware están diseñados para dañar sistemas windows.
+    </p>
+    <h5>En resumen</h5>
+    <ol>
+        <li>Es más dificil configurar y manejar un servidor linux, para hacer esto en windows no se necesita ser un experto</li>
+        <li>Linux es una opción mejor para desarrolladores que quieran montar un servidor Apache o NGINX. o incluso desarrolladores que quieran trabajar con bases de datos MySQL</li>
+        <li>El soporte técnico de windows viene incluido, además de soporte para actualizaciones y errores de seguridad, en linux es necesario pagar una cuota si se necesita un técnico.</li>
+        <li>A la larga, es más costo mantener los servidores</li>
+    </ol>
+    <hr>
+    <h3>Planificar una instalación de ubuntu server</h3>
+    Primeramente, hay que plantearse una serie de preguntas.
+    <ul>
+        <li>¿Cuál es el uso planeado de este sistema y quién se lo va a dar?</li>
+        <li>¿Existen perspectivas de que esto cambie a corto o medio plazo? ¿Y a largo?</li>
+        <li>¿De qué rescursos se dispone para lograr este fin?</li>
+        <li>¿Para qué y por qué necesito un sistema informático?</li>
+        <li>¿Cómo espero que me ayude el sistema?</li>
+        <li>¿Cuáles son los recursos de los que dispongo?</li>
+    </ul>
+    <p class="text-justify">
+        Una vez contestadas estas preguntas, y concluyendo que es necesario realizar una instalación de algún servidor,
+        es perfectamente posible continuar.
+        Para la siguiente y última práctica, será necesario instalar un servidor de linux, y esto será parte de la planeación.
+        Como no se dará acceso a probablemente más de 2 usuarios (computadoras con las que haré pruebas)
+        no será necesario contar con muchos recursos, por lo que quedará de la siguiente manera.
+        <ol>
+            <li>Se realizará la instalación de linux ubuntu server 18.04, por razones de compatibilidad</li>
+            <li>Se instalará en una laptop dentro de una partición de no más de 60 GB</li>
+            <li>Se configurará esa laptop como controlador de dominio</li>
+            <li>Se crearán 2 cuentas de usuario para poder acceder al dominio desde otro equipo</li>
+            <li>Se instalará OpenSSG Server para poder utilizar SSH al servidor</li>
+            <li>Se instalará un servicio DNS</li>
+            <li>Se instalará un servicio LAMP, para poder contar con un servidor web y hospedar páginas web</li>
+            <li>Se instalará Samba, para poder compartir archivos dentro del dominio</li>
+            <li>Se instalará un servidor FTP para tener acceso al sistema de archivos del sistema</li>
+        </ul>
+    </p>
+    <hr>
+    <h3>Conclusión</h3>
+        <p class="text-justify">
+            Es muy importante que se haga la planificación de la instalación correctamente
+            conforme a las necesidades del sistema que se esté planeando hacer. Igualmente hay que planear para saber 
+            si los recursos con los que contamos pueden mantenerse de esa manera o no, que generalmente esto
+            no sucede, puesto que en cualquier empresa (de ser el caso) el tamaño de la información y los usuarios siempre
+            va en constante crecimiento, y de la mano los recursos del sistema.
+        </p>
+    <hr>
+    <h3>Bibliografía:</h2>
+    <ul>
+        <li>Muñoz Lopez, F., 2013. Sistemas Operativos En Red GM. 2nd ed. CDMX: Mc Graw Hill Education, pp.120.127.</li>
+        <li>Bojana Dobran. (2018). Windows Server vs Linux: The Ultimate Comparison. noviembre 21, 2020, de phoenixnap <br>Sitio web: https://phoenixnap.com/blog/linux-vs-microsoft-windows-servers</li>
+    </ul>
+</div>
